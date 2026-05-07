@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuFan Cao | Tsinghua University</title>
+  <meta name="description" content="Academic homepage of LuFan Cao, undergraduate student in Mathematics and Applied Mathematics at Tsinghua University, Qiuzhen College." />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --link: #2563eb;
+      --border: #e5e7eb;
+      --soft: #f8fafc;
+      --dark: #0f172a;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 44px 24px 72px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 188px;
+      gap: 40px;
+      align-items: center;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .name {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: var(--dark);
+      font-weight: 760;
+    }
+
+    .chinese-name {
+      font-size: 21px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+
+    .subtitle {
+      margin: 12px 0 18px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .intro {
+      font-size: 16px;
+      max-width: 720px;
+      margin-bottom: 18px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 15px;
+    }
+
+    .photo-placeholder {
+      width: 188px;
+      height: 188px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #f8fafc, #dbeafe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-align: center;
+      padding: 22px;
+      font-size: 14px;
+    }
+
+    .photo {
+      width: 188px;
+      height: 188px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    nav {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 15px;
+    }
+
+    section {
+      margin-top: 38px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: var(--dark);
+      font-size: 25px;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      color: var(--dark);
+      font-size: 18px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 9px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 14px 0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    }
+
+    .soft-card {
+      background: var(--soft);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 13px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      color: #334155;
+      background: #e2e8f0;
+    }
+
+    .highlight {
+      color: var(--dark);
+      font-weight: 650;
+    }
+
+    .course-list {
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 780px) {
+      header {
+        grid-template-columns: 1fr;
+      }
+
+      .name {
+        font-size: 36px;
+      }
+
+      .two-col,
+      .three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-placeholder,
+      .photo {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <div>
+        <h1 class="name">LuFan Cao <span class="chinese-name">曹露凡</span></h1>
+        <p class="subtitle">
+          Undergraduate Student · Qiuzhen College, Tsinghua University
+        </p>
+        <p class="intro">
+          I am an undergraduate student in Mathematics and Applied Mathematics at
+          <span class="highlight">Tsinghua University, Qiuzhen College</span>.
+          My interests lie in reinforcement learning, mathematical foundations of machine learning,
+          generative models, and embodied intelligence.
+        </p>
+
+        <div class="links">
+          <a href="mailto:caolf23@mails.tsinghua.edu.cn">Email</a>
+          <a href="https://github.com/caolf23">GitHub</a>
+          <a href="lufan_cv.pdf">CV</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <nav>
+          <a href="#about">About</a>
+          <a href="#interests">Research Interests</a>
+          <a href="#projects">Selected Projects</a>
+          <a href="#awards">Awards</a>
+          <a href="#coursework">Coursework</a>
+        </nav>
+      </div>
+
+      <!-- Replace this block with your own photo:
+      <img class="photo" src="profile.jpg" alt="LuFan Cao" />
+      -->
+      <div class="photo-placeholder">Profile Photo</div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am currently pursuing a B.S. degree in Mathematics and Applied Mathematics at Tsinghua University,
+        with expected graduation in June 2027. My academic background combines rigorous mathematical training
+        with coursework and projects in machine learning, deep learning, reinforcement learning, and scientific computing.
+      </p>
+      <p>
+        I am especially interested in how mathematically principled methods can improve exploration,
+        generalization, and policy learning in sequential decision-making problems.
+      </p>
+    </section>
+
+    <section id="interests">
+      <h2>Research Interests</h2>
+      <div class="three-col">
+        <div class="card soft-card">
+          <h3>Reinforcement Learning</h3>
+          <p>Exploration, policy optimization, self-play, offline-to-online RL, and finite-horizon decision making.</p>
+        </div>
+        <div class="card soft-card">
+          <h3>Generative Models</h3>
+          <p>Diffusion models, diffusion policies, likelihood estimation, and video generation models.</p>
+        </div>
+        <div class="card soft-card">
+          <h3>Mathematical ML</h3>
+          <p>Probability, statistics, optimization, numerical analysis, and theoretical foundations of learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected Projects</h2>
+
+      <div class="card">
+        <h3>Deep Reinforcement Learning for Hex Grid Game</h3>
+        <div class="meta">Reinforcement Learning · Game AI · PyTorch · Multi-GPU Training</div>
+        <p>
+          Built a Gymnasium-compatible Hex grid game environment with configurable reward structures
+          for two-agent self-play training.
+        </p>
+        <ul>
+          <li>Implemented PPO training with PyTorch DDP for multi-GPU acceleration on 4 A800 GPUs.</li>
+          <li>Developed Actor-Critic and MCTS-based training pipelines.</li>
+          <li>Designed a ResNet-style policy network with residual connections to capture board structure.</li>
+          <li>Used GAE and action masking to improve training stability and legal-action handling.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag">Reinforcement Learning</span>
+          <span class="tag">PPO</span>
+          <span class="tag">MCTS</span>
+          <span class="tag">ResNet Policy</span>
+          <span class="tag">Self-Play</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mathematical Contest in Modeling</h3>
+        <div class="meta">Mathematical Modeling · Optimization · Unsupervised Learning</div>
+        <p>
+          Developed a data-driven model for historical foot traffic and tourist-flow analysis using
+          wear-pattern modeling and statistical learning.
+        </p>
+        <ul>
+          <li>Extended the Archard wear equation and applied simulated annealing for model fitting.</li>
+          <li>Used X-Means clustering and Z-score analysis for anomaly detection and maintenance-state classification.</li>
+          <li>Provided mathematical analysis of tread-edge and center-depression approximation behavior.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag">Mathematical Modeling</span>
+          <span class="tag">Simulated Annealing</span>
+          <span class="tag">Clustering</span>
+          <span class="tag">Anomaly Detection</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Video Generation Model Architecture Study</h3>
+        <div class="meta">Generative Models · Diffusion Transformers · Empirical Evaluation</div>
+        <p>
+          Studied modern video generation architectures, including the transition from U-Net-based diffusion
+          models to Diffusion Transformers and variable-resolution patching strategies.
+        </p>
+        <ul>
+          <li>Analyzed Sora-style architectural design and the role of Diffusion Transformers.</li>
+          <li>Benchmarked Open-Sora on RTX 4090 hardware and studied prompt-complexity sensitivity.</li>
+          <li>Proposed directions combining differentiable physics and LLM-based temporal planning to improve physical consistency.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag">Diffusion Models</span>
+          <span class="tag">Video Generation</span>
+          <span class="tag">DiT</span>
+          <span class="tag">Physical Consistency</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <h3>Tsinghua University</h3>
+        <div class="meta">B.S. in Mathematics and Applied Mathematics · Qiuzhen College · 2023–Present</div>
+        <p>
+          Expected graduation: June 2027. Sophomore-year GPA ranked within the top 25% of the college.
+        </p>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards</h2>
+      <ul>
+        <li>Silver Medal, Chinese Mathematical Olympiad (CMO), 2022.</li>
+        <li>First Prize, National High School Mathematics League.</li>
+      </ul>
+    </section>
+
+    <section id="coursework">
+      <h2>Selected Coursework</h2>
+      <div class="card course-list">
+        <p><span class="highlight">Computer Science and AI:</span> Machine Learning Theory, Deep Learning, Python for Machine Learning, Object-Oriented Programming in C++, Programming Fundamentals.</p>
+        <p><span class="highlight">Probability and Statistics:</span> Probability Theory I & II, Statistical Inference.</p>
+        <p><span class="highlight">Mathematics:</span> Mathematical Analysis, Real Analysis, Complex Analysis, Functional Analysis, Topology, Linear Algebra, Abstract Algebra, Differential Geometry, Numerical Analysis, Number Theory, Discrete Mathematics.</p>
+        <p><span class="highlight">Physics:</span> Quantum Mechanics, Electrodynamics, Theoretical Physics, University Physics.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:caolf23@mails.tsinghua.edu.cn">caolf23@mails.tsinghua.edu.cn</a></p>
+      <p>GitHub: <a href="https://github.com/caolf23">github.com/caolf23</a></p>
+    </section>
+
+    <footer>
+      Last updated: May 2026. Built with plain HTML/CSS and designed for GitHub Pages.
+    </footer>
+  </main>
+</body>
+</html>
