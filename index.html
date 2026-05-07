@@ -3,35 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuFan Cao | Tsinghua University</title>
-  <meta name="description" content="Academic homepage of LuFan Cao, undergraduate student in Mathematics and Applied Mathematics at Tsinghua University, Qiuzhen College." />
+
+  <title>LuFan Cao | Academic Homepage</title>
+  <meta name="description" content="Academic homepage of LuFan Cao, undergraduate student at Tsinghua University, interested in reinforcement learning, generative models, and mathematical machine learning." />
 
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #1f2933;
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --text: #1f2937;
       --muted: #667085;
-      --link: #2563eb;
-      --border: #e5e7eb;
-      --soft: #f8fafc;
       --dark: #0f172a;
-      --card: #ffffff;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --border: #e5e7eb;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 8px 25px rgba(15, 23, 42, 0.05);
+      --radius: 24px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
       color: var(--text);
-      background: var(--bg);
-      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 34%),
+        radial-gradient(circle at top right, rgba(15, 23, 42, 0.08), transparent 30%),
+        var(--bg);
+      line-height: 1.68;
     }
 
     a {
-      color: var(--link);
+      color: var(--blue);
       text-decoration: none;
     }
 
@@ -39,376 +50,696 @@
       text-decoration: underline;
     }
 
-    .container {
-      max-width: 1040px;
+    .page {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 44px 24px 72px;
+      padding: 36px 24px 72px;
     }
 
-    header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 188px;
-      gap: 40px;
+    .topnav {
+      display: flex;
       align-items: center;
-      padding-bottom: 36px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .name {
-      margin: 0;
-      font-size: 44px;
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-      color: var(--dark);
-      font-weight: 760;
-    }
-
-    .chinese-name {
-      font-size: 21px;
-      font-weight: 500;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
       color: var(--muted);
-      margin-left: 8px;
+      font-size: 14px;
+    }
+
+    .topnav strong {
+      color: var(--dark);
+      font-size: 15px;
+    }
+
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .navlinks a {
+      color: var(--muted);
+    }
+
+    .navlinks a:hover {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .hero {
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 58px;
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+      color: var(--dark);
+    }
+
+    .cn-name {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 24px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0;
     }
 
     .subtitle {
-      margin: 12px 0 18px;
-      font-size: 18px;
+      margin: 18px 0 0;
+      font-size: 20px;
       color: var(--muted);
     }
 
     .intro {
-      font-size: 16px;
-      max-width: 720px;
-      margin-bottom: 18px;
+      margin: 24px 0 0;
+      max-width: 760px;
+      font-size: 17px;
+      color: #475467;
     }
 
-    .links {
+    .action-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 16px;
-      font-size: 15px;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 650;
+      border: 1px solid var(--border);
+      background: var(--paper);
+      color: var(--dark);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    }
+
+    .button.primary {
+      background: var(--dark);
+      color: #fff;
+      border-color: var(--dark);
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+      transition: 0.18s ease;
+    }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
     }
 
     .photo-placeholder {
-      width: 188px;
-      height: 188px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, #f8fafc, #dbeafe);
+      width: 220px;
+      height: 220px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.18), rgba(15, 23, 42, 0.08)),
+        #f8fafc;
+      border: 1px solid #e2e8f0;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--muted);
       text-align: center;
-      padding: 22px;
-      font-size: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
     }
 
     .photo {
-      width: 188px;
-      height: 188px;
-      border-radius: 50%;
+      width: 220px;
+      height: 220px;
+      border-radius: 30px;
       object-fit: cover;
-      border: 1px solid var(--border);
-    }
-
-    nav {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 15px;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
     }
 
     section {
-      margin-top: 38px;
+      margin-top: 34px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     h2 {
-      margin: 0 0 16px;
+      margin: 0;
       color: var(--dark);
-      font-size: 25px;
-      letter-spacing: -0.025em;
+      font-size: 28px;
+      letter-spacing: -0.035em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 18px;
+    }
+
+    .about-card p {
+      margin: 0 0 13px;
+      color: #475467;
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 12px;
+    }
+
+    .fact {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: var(--blue-soft);
+      border: 1px solid #dbeafe;
+    }
+
+    .fact-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .fact-value {
+      margin-top: 3px;
+      color: var(--dark);
+      font-weight: 650;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .interest {
+      min-height: 168px;
+    }
+
+    .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      color: var(--blue);
+      font-weight: 800;
     }
 
     h3 {
-      margin: 0 0 6px;
+      margin: 0 0 8px;
       color: var(--dark);
-      font-size: 18px;
+      font-size: 20px;
+      letter-spacing: -0.02em;
     }
 
-    p {
-      margin: 0 0 12px;
+    .muted {
+      color: var(--muted);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-side {
+      color: var(--muted);
+      font-size: 14px;
+      padding-top: 4px;
+    }
+
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 5px;
+    }
+
+    .project-title-row h3 {
+      margin: 0;
+    }
+
+    .project p {
+      margin: 0 0 10px;
+      color: #475467;
     }
 
     ul {
-      margin: 9px 0 0 20px;
+      margin: 10px 0 0 20px;
       padding: 0;
+      color: #475467;
     }
 
     li {
       margin: 6px 0;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 20px;
-      margin: 14px 0;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
     }
 
-    .soft-card {
-      background: var(--soft);
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 14.5px;
-      margin-bottom: 8px;
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 13px;
+      font-weight: 550;
     }
 
     .two-col {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .three-col {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .tag-list {
+    .education-title {
       display: flex;
+      justify-content: space-between;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
     }
 
-    .tag {
-      font-size: 13px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      color: #334155;
-      background: #e2e8f0;
+    .course-list p {
+      margin: 0 0 12px;
+      color: #475467;
     }
 
     .highlight {
       color: var(--dark);
-      font-weight: 650;
-    }
-
-    .course-list {
-      font-size: 15px;
+      font-weight: 700;
     }
 
     footer {
-      margin-top: 50px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
+      margin-top: 46px;
       color: var(--muted);
       font-size: 14px;
+      text-align: center;
     }
 
-    @media (max-width: 780px) {
-      header {
+    @media (max-width: 860px) {
+      .hero {
         grid-template-columns: 1fr;
+        padding: 30px;
       }
 
-      .name {
-        font-size: 36px;
+      h1 {
+        font-size: 44px;
       }
 
+      .about-grid,
+      .interest-grid,
       .two-col,
-      .three-col {
+      .project {
         grid-template-columns: 1fr;
+      }
+
+      .project-side {
+        padding-top: 0;
+      }
+
+      .topnav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 22px 16px 56px;
+      }
+
+      .hero {
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 38px;
       }
 
       .photo-placeholder,
       .photo {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <header>
+  <main class="page">
+    <div class="topnav">
+      <strong>LuFan Cao</strong>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <header class="hero">
       <div>
-        <h1 class="name">LuFan Cao <span class="chinese-name">曹露凡</span></h1>
+        <p class="eyebrow">Tsinghua University · Qiuzhen College</p>
+
+        <h1>
+          LuFan Cao
+          <span class="cn-name">曹露凡</span>
+        </h1>
+
         <p class="subtitle">
-          Undergraduate Student · Qiuzhen College, Tsinghua University
+          Undergraduate Student in Mathematics and Applied Mathematics
         </p>
+
         <p class="intro">
-          I am an undergraduate student in Mathematics and Applied Mathematics at
-          <span class="highlight">Tsinghua University, Qiuzhen College</span>.
-          My interests lie in reinforcement learning, mathematical foundations of machine learning,
+          I am an undergraduate student at Tsinghua University. My interests lie in
+          reinforcement learning, mathematical foundations of machine learning,
           generative models, and embodied intelligence.
         </p>
 
-        <div class="links">
-          <a href="mailto:caolf23@mails.tsinghua.edu.cn">Email</a>
-          <a href="https://github.com/caolf23">GitHub</a>
-          <a href="lufan_cv.pdf">CV</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+        <div class="action-row">
+          <a class="button primary" href="mailto:caolf23@mails.tsinghua.edu.cn">Email</a>
+          <a class="button" href="https://github.com/caolf23">GitHub</a>
+          <a class="button" href="lufan_cv.pdf">CV</a>
+          <a class="button" href="#projects">Selected Projects</a>
         </div>
-
-        <nav>
-          <a href="#about">About</a>
-          <a href="#interests">Research Interests</a>
-          <a href="#projects">Selected Projects</a>
-          <a href="#awards">Awards</a>
-          <a href="#coursework">Coursework</a>
-        </nav>
       </div>
 
-      <!-- Replace this block with your own photo:
-      <img class="photo" src="profile.jpg" alt="LuFan Cao" />
-      -->
-      <div class="photo-placeholder">Profile Photo</div>
+      <div class="photo-wrap">
+        <!-- To use your photo:
+             1. Upload a photo named profile.jpg to the same GitHub repo.
+             2. Replace the next div with:
+                <img class="photo" src="profile.jpg" alt="LuFan Cao" />
+        -->
+        <div class="photo-placeholder">Profile Photo</div>
+      </div>
     </header>
 
     <section id="about">
-      <h2>About</h2>
-      <p>
-        I am currently pursuing a B.S. degree in Mathematics and Applied Mathematics at Tsinghua University,
-        with expected graduation in June 2027. My academic background combines rigorous mathematical training
-        with coursework and projects in machine learning, deep learning, reinforcement learning, and scientific computing.
-      </p>
-      <p>
-        I am especially interested in how mathematically principled methods can improve exploration,
-        generalization, and policy learning in sequential decision-making problems.
-      </p>
+      <div class="section-title">
+        <h2>About</h2>
+        <span class="section-note">Mathematics · Machine Learning · Reinforcement Learning</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="card about-card">
+          <p>
+            I am currently pursuing a B.S. degree in Mathematics and Applied Mathematics
+            at Tsinghua University, with expected graduation in June 2027.
+          </p>
+          <p>
+            My academic background combines rigorous mathematical training with projects
+            in machine learning, deep reinforcement learning, generative models, and
+            scientific computing.
+          </p>
+          <p>
+            I am especially interested in how mathematically principled methods can
+            improve exploration, generalization, and policy learning in sequential
+            decision-making problems.
+          </p>
+        </div>
+
+        <div class="quick-facts">
+          <div class="fact">
+            <div class="fact-label">Institution</div>
+            <div class="fact-value">Tsinghua University</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">College</div>
+            <div class="fact-value">Qiuzhen College</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Expected Graduation</div>
+            <div class="fact-value">June 2027</div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="interests">
-      <h2>Research Interests</h2>
-      <div class="three-col">
-        <div class="card soft-card">
+      <div class="section-title">
+        <h2>Research Interests</h2>
+      </div>
+
+      <div class="interest-grid">
+        <div class="card interest">
+          <div class="icon">RL</div>
           <h3>Reinforcement Learning</h3>
-          <p>Exploration, policy optimization, self-play, offline-to-online RL, and finite-horizon decision making.</p>
+          <p class="muted">
+            Exploration, policy optimization, self-play, offline-to-online RL,
+            and finite-horizon decision making.
+          </p>
         </div>
-        <div class="card soft-card">
+
+        <div class="card interest">
+          <div class="icon">GM</div>
           <h3>Generative Models</h3>
-          <p>Diffusion models, diffusion policies, likelihood estimation, and video generation models.</p>
+          <p class="muted">
+            Diffusion models, diffusion policies, likelihood estimation,
+            and video generation architectures.
+          </p>
         </div>
-        <div class="card soft-card">
+
+        <div class="card interest">
+          <div class="icon">ML</div>
           <h3>Mathematical ML</h3>
-          <p>Probability, statistics, optimization, numerical analysis, and theoretical foundations of learning.</p>
+          <p class="muted">
+            Probability, statistics, optimization, numerical analysis,
+            and theoretical foundations of learning.
+          </p>
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Selected Projects</h2>
-
-      <div class="card">
-        <h3>Deep Reinforcement Learning for Hex Grid Game</h3>
-        <div class="meta">Reinforcement Learning · Game AI · PyTorch · Multi-GPU Training</div>
-        <p>
-          Built a Gymnasium-compatible Hex grid game environment with configurable reward structures
-          for two-agent self-play training.
-        </p>
-        <ul>
-          <li>Implemented PPO training with PyTorch DDP for multi-GPU acceleration on 4 A800 GPUs.</li>
-          <li>Developed Actor-Critic and MCTS-based training pipelines.</li>
-          <li>Designed a ResNet-style policy network with residual connections to capture board structure.</li>
-          <li>Used GAE and action masking to improve training stability and legal-action handling.</li>
-        </ul>
-        <div class="tag-list">
-          <span class="tag">Reinforcement Learning</span>
-          <span class="tag">PPO</span>
-          <span class="tag">MCTS</span>
-          <span class="tag">ResNet Policy</span>
-          <span class="tag">Self-Play</span>
-        </div>
+      <div class="section-title">
+        <h2>Selected Projects</h2>
+        <span class="section-note">Research and engineering experience</span>
       </div>
 
       <div class="card">
-        <h3>Mathematical Contest in Modeling</h3>
-        <div class="meta">Mathematical Modeling · Optimization · Unsupervised Learning</div>
-        <p>
-          Developed a data-driven model for historical foot traffic and tourist-flow analysis using
-          wear-pattern modeling and statistical learning.
-        </p>
-        <ul>
-          <li>Extended the Archard wear equation and applied simulated annealing for model fitting.</li>
-          <li>Used X-Means clustering and Z-score analysis for anomaly detection and maintenance-state classification.</li>
-          <li>Provided mathematical analysis of tread-edge and center-depression approximation behavior.</li>
-        </ul>
-        <div class="tag-list">
-          <span class="tag">Mathematical Modeling</span>
-          <span class="tag">Simulated Annealing</span>
-          <span class="tag">Clustering</span>
-          <span class="tag">Anomaly Detection</span>
-        </div>
-      </div>
+        <article class="project">
+          <div class="project-side">RL / Exploration</div>
+          <div>
+            <div class="project-title-row">
+              <h3>L1-Coverage Exploration</h3>
+            </div>
+            <p>
+              Reproduced and extended CODEX.W and PSDP for tightrope grid-world
+              exploration, studying reward design and coverage behavior.
+            </p>
+            <ul>
+              <li>Implemented tabular and neural-network-based exploration policies.</li>
+              <li>Compared final-step reward with reward-at-every-step variants.</li>
+              <li>Studied state-based versus transition-based reward modeling.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">CODEX.W</span>
+              <span class="tag">PSDP</span>
+              <span class="tag">GridWorld</span>
+              <span class="tag">Exploration</span>
+            </div>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>Video Generation Model Architecture Study</h3>
-        <div class="meta">Generative Models · Diffusion Transformers · Empirical Evaluation</div>
-        <p>
-          Studied modern video generation architectures, including the transition from U-Net-based diffusion
-          models to Diffusion Transformers and variable-resolution patching strategies.
-        </p>
-        <ul>
-          <li>Analyzed Sora-style architectural design and the role of Diffusion Transformers.</li>
-          <li>Benchmarked Open-Sora on RTX 4090 hardware and studied prompt-complexity sensitivity.</li>
-          <li>Proposed directions combining differentiable physics and LLM-based temporal planning to improve physical consistency.</li>
-        </ul>
-        <div class="tag-list">
-          <span class="tag">Diffusion Models</span>
-          <span class="tag">Video Generation</span>
-          <span class="tag">DiT</span>
-          <span class="tag">Physical Consistency</span>
-        </div>
+        <article class="project">
+          <div class="project-side">Game AI</div>
+          <div>
+            <h3>Deep Reinforcement Learning for Hex Grid Game</h3>
+            <p>
+              Built a Gymnasium-compatible Hex environment with configurable reward
+              structures for two-agent self-play training.
+            </p>
+            <ul>
+              <li>Implemented PPO training with PyTorch DDP on 4 A800 GPUs.</li>
+              <li>Developed Actor-Critic and MCTS-based training pipelines.</li>
+              <li>Designed a ResNet-style policy network with residual connections.</li>
+              <li>Used GAE and action masking to improve training stability.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">PPO</span>
+              <span class="tag">MCTS</span>
+              <span class="tag">ResNet Policy</span>
+              <span class="tag">Self-Play</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-side">Modeling</div>
+          <div>
+            <h3>Mathematical Contest in Modeling</h3>
+            <p>
+              Developed a data-driven model for historical foot traffic and
+              tourist-flow analysis using wear-pattern modeling and statistical learning.
+            </p>
+            <ul>
+              <li>Extended the Archard wear equation and applied simulated annealing.</li>
+              <li>Used X-Means clustering and Z-score analysis for anomaly detection.</li>
+              <li>Provided mathematical analysis of tread-edge and center-depression behavior.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Mathematical Modeling</span>
+              <span class="tag">Optimization</span>
+              <span class="tag">Clustering</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-side">Generative AI</div>
+          <div>
+            <h3>Video Generation Model Architecture Study</h3>
+            <p>
+              Studied modern video generation architectures, including the transition
+              from U-Net-based diffusion models to Diffusion Transformers.
+            </p>
+            <ul>
+              <li>Analyzed Sora-style architectural design and Diffusion Transformers.</li>
+              <li>Benchmarked Open-Sora on RTX 4090 hardware.</li>
+              <li>Proposed directions combining differentiable physics and LLM-based temporal planning.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Diffusion Models</span>
+              <span class="tag">DiT</span>
+              <span class="tag">Video Generation</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="education">
-      <h2>Education</h2>
-      <div class="card">
-        <h3>Tsinghua University</h3>
-        <div class="meta">B.S. in Mathematics and Applied Mathematics · Qiuzhen College · 2023–Present</div>
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="education-title">
+            <h3>Tsinghua University</h3>
+            <span class="muted">2023 – Present</span>
+          </div>
+          <p class="muted">
+            B.S. in Mathematics and Applied Mathematics, Qiuzhen College.
+            Expected graduation: June 2027.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Top 25% GPA</span>
+            <span class="tag">Qiuzhen College</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Awards</h3>
+          <ul>
+            <li>Silver Medal, Chinese Mathematical Olympiad, 2022.</li>
+            <li>First Prize, National High School Mathematics League.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="coursework">
+      <div class="section-title">
+        <h2>Selected Coursework</h2>
+      </div>
+
+      <div class="card course-list">
         <p>
-          Expected graduation: June 2027. Sophomore-year GPA ranked within the top 25% of the college.
+          <span class="highlight">Computer Science and AI:</span>
+          Machine Learning Theory, Deep Learning, Python for Machine Learning,
+          Object-Oriented Programming in C++, Programming Fundamentals.
+        </p>
+        <p>
+          <span class="highlight">Probability and Statistics:</span>
+          Probability Theory I & II, Statistical Inference.
+        </p>
+        <p>
+          <span class="highlight">Mathematics:</span>
+          Mathematical Analysis, Real Analysis, Complex Analysis, Functional Analysis,
+          Topology, Linear Algebra, Abstract Algebra, Differential Geometry,
+          Numerical Analysis, Number Theory, Discrete Mathematics.
+        </p>
+        <p>
+          <span class="highlight">Physics:</span>
+          Quantum Mechanics, Electrodynamics, Theoretical Physics, University Physics.
         </p>
       </div>
     </section>
 
-    <section id="awards">
-      <h2>Awards</h2>
-      <ul>
-        <li>Silver Medal, Chinese Mathematical Olympiad (CMO), 2022.</li>
-        <li>First Prize, National High School Mathematics League.</li>
-      </ul>
-    </section>
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
 
-    <section id="coursework">
-      <h2>Selected Coursework</h2>
-      <div class="card course-list">
-        <p><span class="highlight">Computer Science and AI:</span> Machine Learning Theory, Deep Learning, Python for Machine Learning, Object-Oriented Programming in C++, Programming Fundamentals.</p>
-        <p><span class="highlight">Probability and Statistics:</span> Probability Theory I & II, Statistical Inference.</p>
-        <p><span class="highlight">Mathematics:</span> Mathematical Analysis, Real Analysis, Complex Analysis, Functional Analysis, Topology, Linear Algebra, Abstract Algebra, Differential Geometry, Numerical Analysis, Number Theory, Discrete Mathematics.</p>
-        <p><span class="highlight">Physics:</span> Quantum Mechanics, Electrodynamics, Theoretical Physics, University Physics.</p>
+      <div class="card">
+        <p>Email: <a href="mailto:caolf23@mails.tsinghua.edu.cn">caolf23@mails.tsinghua.edu.cn</a></p>
+        <p>GitHub: <a href="https://github.com/caolf23">github.com/caolf23</a></p>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:caolf23@mails.tsinghua.edu.cn">caolf23@mails.tsinghua.edu.cn</a></p>
-      <p>GitHub: <a href="https://github.com/caolf23">github.com/caolf23</a></p>
-    </section>
-
     <footer>
-      Last updated: May 2026. Built with plain HTML/CSS and designed for GitHub Pages.
+      Last updated: May 2026 · Built with plain HTML/CSS · Hosted by GitHub Pages
     </footer>
   </main>
 </body>
